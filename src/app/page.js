@@ -23,8 +23,6 @@ export default function Home() {
 
       const data = await res.json();
 
-      console.log("response body", data);
-
       if (res.ok) {
         localStorage.setItem("isLoggedIn", "true");
         toast.success("Connexion réussie");
