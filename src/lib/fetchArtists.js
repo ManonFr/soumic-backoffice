@@ -1,5 +1,5 @@
 export async function fetchAllArtists() {
-  const res = await fetch(`http://localhost:3001/artists`, {
+  const res = await fetch(`${process.env.NEXT_LOCAL_PUBLIC_API}/artists`, {
     next: { revalidate: 3600 },
   });
 

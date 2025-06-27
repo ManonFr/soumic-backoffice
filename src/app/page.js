@@ -9,11 +9,14 @@ export default function Home() {
 
   const handleLogin = async (username, password) => {
     try {
-      const res = await fetch("http://localhost:3001/admin/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/admin/login`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+        }
+      );
 
       console.log("status :", res.status);
       console.log("res.ok", res.ok);
