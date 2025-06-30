@@ -12,8 +12,6 @@ This repository contains the admin dashboard for the Soumic Festival project.
 > - react-hot-toast for user feedback
 > - Express backend (soumic-backend)
 
----
-
 ## Project structure
 
 soumic-backoffice/
@@ -65,6 +63,7 @@ It constitutes a clean separation between public site and admin, it is easier to
 ## Project context
 
 This project was built as part of the evaluation project for a fullstack training.
-Admin dashboard by: Manon Fromage
 
----
+## License
+
+This project is for educational purposes and has no specific license.

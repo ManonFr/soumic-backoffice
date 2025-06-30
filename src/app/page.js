@@ -18,9 +18,6 @@ export default function Home() {
         }
       );
 
-      console.log("status :", res.status);
-      console.log("res.ok", res.ok);
-
       const data = await res.json();
 
       if (res.ok) {
