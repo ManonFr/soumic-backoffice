@@ -4,19 +4,12 @@ import ArtistForm from "@/components/ArtistForm/ArtistForm";
 import ArtistList from "@/components/ArtistList/ArtistList";
 import SearchBar from "@/components/SearchBar/SearchBar";
 import useArtistForm from "@/hooks/useArtistForm";
-import { useRouter } from "next/navigation";
 import styles from "./adminArtistsPage.module.css";
 import { useAdminAuth } from "@/hooks/useAdminAuth";
+import Link from "next/link";
 
 export default function AdminArtistsPage() {
   useAdminAuth(); // Protect the page: redirect to "/" if not logged in
-
-  const router = useRouter();
-
-  const handleLogOut = () => {
-    localStorage.removeItem("isLoggedIn");
-    router.replace("/");
-  };
 
   const {
     artists,
@@ -46,11 +39,11 @@ export default function AdminArtistsPage() {
 
   return (
     <div>
-      <h1> Gestion des artistes</h1>
+      <h1>Gestion des artistes</h1>
       <div className={styles.searchAndLogout}>
-        <button onClick={handleLogOut} className={styles.logoutButton}>
-          Déconnexion
-        </button>
+        <Link href="/hub" className={styles.backButton}>
+          ← Retour au tableau de bord
+        </Link>
         <SearchBar onSearch={setSearchTerm} />
       </div>
       <ArtistForm

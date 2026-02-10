@@ -1,0 +1,45 @@
+.backButton {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.backButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.container {
+  min-height: 100vh;
+  padding: 2rem 3rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.poiList {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.poiItem {
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.poiItem strong {
+  color: #00ffff;
+}

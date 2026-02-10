@@ -42,7 +42,7 @@ export default function useArtistForm() {
       setArtists(data);
 
       const uniqueGenres = Array.from(
-        new Set(data.map((artist) => artist.genre))
+        new Set(data.map((artist) => artist.genre)),
       );
       setGenres(uniqueGenres);
 
@@ -52,8 +52,8 @@ export default function useArtistForm() {
           data.map((artist) => [
             artist.stage_id,
             { id: artist.stage_id, name: artist.stage_name },
-          ])
-        ).values()
+          ]),
+        ).values(),
       );
       setStages(uniqueStages);
     } catch (err) {}
@@ -135,7 +135,7 @@ export default function useArtistForm() {
     .filter((artist) =>
       (artist.artist_name || "")
         .toLowerCase()
-        .includes(searchTerm.toLowerCase())
+        .includes(searchTerm.toLowerCase()),
     )
     .sort((a, b) => a.artist_name.localeCompare(b.artist_name));
 
