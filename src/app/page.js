@@ -15,7 +15,7 @@ export default function Home() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ username, password }),
-        }
+        },
       );
 
       const data = await res.json();
@@ -23,7 +23,7 @@ export default function Home() {
       if (res.ok) {
         localStorage.setItem("isLoggedIn", "true");
         toast.success("Connexion réussie");
-        router.push("/artists");
+        router.push("/hub");
         return true;
       } else {
         toast.error(data.error || "Erreur lors de la connexion");

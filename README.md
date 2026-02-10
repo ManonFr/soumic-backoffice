@@ -29,7 +29,7 @@ soumic-backoffice/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/soumic-backoffice.git
+git clone https://github.com/ManonFr/soumic-backoffice.git
 cd soumic-backoffice
 ```
 

@@ -9,7 +9,7 @@ import styles from "./adminArtistsPage.module.css";
 import { useAdminAuth } from "@/hooks/useAdminAuth";
 
 export default function AdminArtistsPage() {
-  useAdminAuth();
+  useAdminAuth(); // Protect the page: redirect to "/" if not logged in
 
   const router = useRouter();
 

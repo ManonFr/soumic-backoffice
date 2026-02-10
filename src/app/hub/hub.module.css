@@ -1,0 +1,73 @@
+.hubContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonsWrapper {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  transform: translateY(-80px);
+}
+
+.hubButton {
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-family: var(--font-exo2), sans-serif;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #00ffff;
+  border: 2px solid #00ffff;
+  background: rgba(0, 255, 255, 0.05);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.hubButtonSecondary {
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-family: var(--font-exo2), sans-serif;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #ff00ff;
+  border: 2px solid #ff00ff;
+  background: rgba(255, 0, 255, 0.05);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.hubButton:hover {
+  background: rgba(0, 255, 255, 0.15);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 1);
+}
+
+.hubButtonSecondary:hover {
+  background: rgba(255, 0, 255, 0.15);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 1);
+}
+
+.logoutButton {
+    background-color: #ff6666;
+    color: #ffffff;
+    padding: 10px 16px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.logoutButton:hover {
+    background-color: #ff4d4d;
+}
+
+@media screen and (max-width: 767px) {
+  .buttonsWrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
