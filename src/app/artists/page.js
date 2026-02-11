@@ -42,7 +42,7 @@ export default function AdminArtistsPage() {
       <h1>Gestion des artistes</h1>
       <div className={styles.searchAndLogout}>
         <Link href="/hub" className={styles.backButton}>
-          ← Retour au tableau de bord
+          Retour au tableau de bord
         </Link>
         <SearchBar onSearch={setSearchTerm} />
       </div>

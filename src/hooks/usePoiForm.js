@@ -22,8 +22,16 @@ export default function usePoiForm() {
       const data = await getPois();
       setPois(data);
     } catch (err) {
-      toast.error("Erreur lors du chargement des POIs");
+      toast.error("Erreur lors du chargement des POIs ❌");
     }
+  }
+
+  function resetForm() {
+    setName("");
+    setDescription("");
+    setLatitude("");
+    setLongitude("");
+    setPoiId("");
   }
 
   async function handleSubmit(e) {
@@ -50,6 +58,7 @@ export default function usePoiForm() {
       // Refresh pois list
       fetchPois();
       resetForm();
+      setEditingPoiId(null);
     } catch (err) {
       toast.error("Erreur lors de l'enregistrement ❌");
     }
@@ -74,13 +83,9 @@ export default function usePoiForm() {
     setPoiId(poi.poi_id.toString());
   }
 
-  function resetForm() {
-    // Clear form fields
-    setName("");
-    setDescription("");
-    setLatitude("");
-    setLongitude("");
-    setPoiId("");
+  function handleCancelEdit() {
+    setEditingPoiId(null);
+    resetForm();
   }
 
   return {
@@ -93,6 +98,7 @@ export default function usePoiForm() {
     editingPoiId,
     handleSubmit,
     handleEdit,
+    handleCancelEdit,
     handleDelete,
     setName,
     setDescription,
