@@ -72,7 +72,7 @@ export default function AdminPoiPage() {
                 onClick={() => handleEdit(poi)}
                 className={`${styles.cardButton} ${styles.editButton}`}
               >
-                Éditer
+                Modifier
               </button>
 
               <button

@@ -59,6 +59,17 @@ export default function useArtistForm() {
     } catch (err) {}
   }
 
+  function resetForm() {
+    // Clear form fields
+    setName("");
+    setPhoto("");
+    setGenre("");
+    setDate("");
+    setStartTime("");
+    setEndTime("");
+    setStageId("");
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -94,6 +105,7 @@ export default function useArtistForm() {
       //Refresh artists list
       fetchArtists();
       resetForm();
+      setEditingArtistId(null);
     } catch (err) {
       toast.error("Erreur lors de l'enregistrement ❌");
     }
@@ -111,24 +123,13 @@ export default function useArtistForm() {
 
   function handleEdit(artist) {
     setEditingArtistId(artist.artist_id);
-    setName(artist.name);
+    setName(artist.artist_name);
     setPhoto(artist.photo);
     setGenre(artist.genre);
-    setDate(artist.date);
+    setDate(artist.date.split("T")[0]);
     setStartTime(artist.start_time);
     setEndTime(artist.end_time);
     setStageId(artist.stage_id.toString());
-  }
-
-  function resetForm() {
-    // Clear form fields
-    setName("");
-    setPhoto("");
-    setGenre("");
-    setDate("");
-    setStartTime("");
-    setEndTime("");
-    setStageId("");
   }
 
   const filteredArtists = artists
@@ -138,6 +139,11 @@ export default function useArtistForm() {
         .includes(searchTerm.toLowerCase()),
     )
     .sort((a, b) => a.artist_name.localeCompare(b.artist_name));
+
+  function handleCancelEdit() {
+    setEditingArtistId(null);
+    resetForm();
+  }
 
   return {
     artists: filteredArtists,
@@ -154,6 +160,7 @@ export default function useArtistForm() {
     searchTerm,
     handleSubmit,
     handleEdit,
+    handleCancelEdit,
     handleDelete,
     setName,
     setPhoto,

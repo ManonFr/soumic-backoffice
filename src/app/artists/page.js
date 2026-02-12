@@ -25,6 +25,7 @@ export default function AdminArtistsPage() {
     editingArtistId,
     handleSubmit,
     handleEdit,
+    handleCancelEdit,
     handleDelete,
     setName,
     setPhoto,
@@ -33,7 +34,6 @@ export default function AdminArtistsPage() {
     setStartTime,
     setEndTime,
     setStageId,
-    setEditingArtistId,
     setSearchTerm,
   } = useArtistForm();
 
@@ -57,7 +57,7 @@ export default function AdminArtistsPage() {
         genres={genres}
         stages={stages}
         editingArtistId={editingArtistId}
-        onCancelEdit={() => setEditingArtistId(null)}
+        onCancelEdit={handleCancelEdit}
         onSubmit={handleSubmit}
         setName={setName}
         setPhoto={setPhoto}
